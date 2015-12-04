@@ -14,6 +14,7 @@ module.exports = ActivatePowerMode =
 
     @throttledShake = throttle @shake.bind(this), 100, trailing: false
     @throttledSpawnParticles = throttle @spawnParticles.bind(this), 25, trailing: false
+    @throttledPlayAudio = throttle @playAudio.bind(this), 25, trailing: false
 
     @editor = atom.workspace.getActiveTextEditor()
     @editorElement = atom.views.getView @editor
@@ -46,6 +47,7 @@ module.exports = ActivatePowerMode =
       range = e.newRange.start
 
     @throttledSpawnParticles(range) if spawnParticles
+    @throttledPlayAudio() if spawnParticles
     @throttledShake()
 
   shake: ->
@@ -74,6 +76,11 @@ module.exports = ActivatePowerMode =
       part =  @createParticle left, top, color
       @particles[@particlePointer] = part
       @particlePointer = (@particlePointer + 1) % 500
+
+  playAudio: ->
+    audio = new Audio('https://a.clyp.it/f2tiznet.mp3')
+    audio.play()
+
 
   getColorAtPosition: (left, top) ->
     offset = @editorElement.getBoundingClientRect()

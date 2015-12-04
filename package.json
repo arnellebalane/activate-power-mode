@@ -2,13 +2,13 @@
   "name": "activate-power-mode",
   "main": "./lib/activate-power-mode",
   "version": "0.3.2",
-  "description": "Activate POWER MODE to write your code in style.",
+  "description": "Activate POWER MODE to write your code in style, with sounds",
   "keywords": [],
   "activationCommands": {
     "atom-workspace": "activate-power-mode:toggle"
   },
-  "repository": "https://github.com/JoelBesada/activate-power-mode",
-  "author": "Joel Besada <joel@joelb.me> (http://joelb.me)",
+  "repository": "https://github.com/arnellebalane/activate-power-mode",
+  "author": "Arnelle Balane <arnellebalane@gmail.com>",
   "license": "MIT",
   "engines": {
     "atom": ">=1.0.0 <2.0.0"
